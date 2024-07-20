@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Regular.eot');
+    src: local('Gilroy Regular'), local('Gilroy-Regular'),
+        url('Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Regular.woff') format('woff'),
+        url('Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Black.eot');
+    src: local('Gilroy Black'), local('Gilroy-Black'),
+        url('Gilroy-Black.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Black.woff') format('woff'),
+        url('Gilroy-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Medium.eot');
+    src: local('Gilroy Medium'), local('Gilroy-Medium'),
+        url('Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Medium.woff') format('woff'),
+        url('Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gilroy';
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    transition: all .5s;
+}
+
+.modal {
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background: #fff;
+    display: none;
+    transition: all .5s;
+    
+}
+
+.language-modal-root {
+    padding: 40px;
+    max-height: 100vh;
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(100%);
+    transition: all 0.8s ease-in-out ; 
+    opacity: 0;
+}
+
+.modal-container {
+    padding: 0px 30px 80px 30px;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.modal.show .language-modal-root {
+    transform: translateY(0); 
+    opacity: 1;
+}
+
+.modal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 215px);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.close-btn-container {
+    position: sticky;
+    top: 4px;
+    right: 4px;
+    z-index: 100;
+    float: right;
+    width: 34px;
+    height: 34px;
+
+}
+.close {
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.close:hover {
+    background: #cacacb;
+}
+
+
+.country-link {
+    display: block;
+    text-align: left;
+    padding: 12px 12px 12px 8px;
+    border-radius: 18px;
+    border: 1px solid #cacacb;
+    background: #fff;
+    transition: .2s;
+    text-decoration: none;
+    min-height: 65px;
+    height: auto;
+
+}
+.country-link:hover {
+    background: #cacacb;
+}
+
+.css-1dscrux {
+    float: left;
+    padding-right: 4px;
+    height: 30px;
+    color: #cacacb;
+    transition: .2s;
+}
+.country-link:hover .css-1dscrux {
+    color: #707072;
+}
+.css-kgkm8k .locale-label-container {
+    margin-left: 28px;
+}
+.css-kgkm8k h4 {
+    display: flex;
+}
+ ul {
+    list-style: none;
+ }
+ .modal-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+    padding: 4px 28px 0 28px;
+}
+ .modal-h2 {
+    font-weight: 500;
+    font-size: 1.5em;
+    padding-top: 36px;
+ }
+
+ .modal-h4 {
+    color: #111;
+    font-weight: 500;
+    font-size: 17px;
+ }
+ .modal-p {
+    font-size: 12px;
+    color: #707072;
+ }
+ .locale-label-container {
+    display: flex;
+    flex-direction: column;
+}
+
+ @media (max-width: 440px) {
+    .modal-title {
+        font-size: 25px;
+    }
+    .language-modal-root {
+        padding: 25px;
+    }
+    .modal-container {
+        padding: 0;
+    }
+    .modal-list {
+        grid-template-columns: repeat(auto-fit, 184px);
+    }
+ }
+
+ @media (max-width: 412px) {
+    .modal-list {
+        grid-template-columns: repeat(auto-fit, 175px);
+    }
+ }
+ @media (max-width: 390px) {
+    .modal-list {
+        grid-template-columns: repeat(auto-fit, 164px);
+    }
+}
